@@ -1,4 +1,6 @@
 Blog::Application.routes.draw do
+  resources :profiles
+
   get "home/index"
   devise_for :blog_users
   #devise_for :users

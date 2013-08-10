@@ -16,6 +16,7 @@ class WeblogsController < ApplicationController
   # GET /weblogs/new
   def new
     @weblog = Weblog.new
+    @weblog_relation_profile = Profile.find(session[:login])
   end
 
   # GET /weblogs/1/edit

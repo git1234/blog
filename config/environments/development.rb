@@ -34,6 +34,6 @@ Blog::Application.configure do
     :port => 587,
     :authentication => :plain,
     :user_name => 'takuro01234@gmail.com',
-    :password => 'takakatoo1'
+    :password => '***' #本番の時だけここはパスワード
   }
 end

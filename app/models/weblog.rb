@@ -3,6 +3,6 @@ class Weblog < ActiveRecord::Base
 	belongs_to :profile
 	has_many :entries
 
-	validates_uniqueness_of :profile_id
-	validates_uniqueness_of :user_id
+	validates :profile_id, uniqueness: true, numericality: true
+	validates :user_id, uniqueness: true, numericality: true
 end

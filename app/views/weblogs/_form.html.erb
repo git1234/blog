@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= f.label :user_id %><br>
     <%= f.number_field :user_id, value:session[:login]  %>
   </div>
 
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= f.label :profile_id %><br>
     <%= f.number_field :profile_id, value:@weblog_relation_profile.id  %>
   </div>

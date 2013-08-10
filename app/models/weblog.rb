@@ -1,4 +1,4 @@
 class Weblog < ActiveRecord::Base
-	belongs_to :user
+	belongs_to :blog_user
 	has_many :entries
 end

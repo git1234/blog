@@ -1,5 +1,6 @@
 class WeblogsController < ApplicationController
   before_action :set_weblog, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_blog_user!
 
   # GET /weblogs
   # GET /weblogs.json

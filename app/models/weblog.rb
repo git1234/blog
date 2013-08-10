@@ -4,4 +4,5 @@ class Weblog < ActiveRecord::Base
 	has_many :entries
 
 	validates_uniqueness_of :profile_id
+	validates_uniqueness_of :user_id
 end

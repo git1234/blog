@@ -17,10 +17,14 @@ class WeblogsController < ApplicationController
   def new
     @weblog = Weblog.new
     @weblog_relation_profile = Profile.find(session[:login])
+    logger.debug("---------------#{@weblog_relation_profile}")
   end
 
   # GET /weblogs/1/edit
   def edit
+    @weblog_relation_profile = Profile.find(session[:login])
+        logger.debug("---------------#{@weblog_relation_profile}")
+
   end
 
   # POST /weblogs
@@ -71,6 +75,6 @@ class WeblogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def weblog_params
-      params.require(:weblog).permit(:user_id, :blog_name)
+      params.require(:weblog).permit(:user_id, :blog_name, :profile_id)
     end
 end

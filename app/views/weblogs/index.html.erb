@@ -8,6 +8,7 @@
       <th></th>
       <th></th>
       <th></th>
+      <th></th>
     </tr>
   </thead>
 
@@ -16,6 +17,9 @@
       <tr>
         <td><%= weblog.user_id %></td>
         <td><%= weblog.blog_name %></td>
+        <% if weblog.user_id == session[:login] %>
+          <td><%= link_to '記事を書く', new_entry_path %></td>
+        <% end %>
         <td><%= link_to 'Show', weblog %></td>
         <td><%= link_to 'Edit', edit_weblog_path(weblog) %></td>
         <td><%= link_to 'Destroy', weblog, method: :delete, data: { confirm: 'Are you sure?' } %></td>

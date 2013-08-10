@@ -16,6 +16,7 @@ class CommentsController < ApplicationController
   # GET /comments/new
   def new
     @comment = Comment.new
+    @will_comment_entry_id = params[:will_comment_entry_id]
   end
 
   # GET /comments/1/edit
@@ -70,6 +71,6 @@ class CommentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def comment_params
-      params.require(:comment).permit(:entry_id, :comment, :user_id)
+      params.require(:comment).permit(:entry_id, :comment, :user_id, :profile_id)
     end
 end

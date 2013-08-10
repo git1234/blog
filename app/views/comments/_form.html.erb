@@ -13,15 +13,15 @@
 
   <div class="field">
     <%= f.label :entry_id %><br>
-    <%= f.number_field :entry_id %>
+    <%= f.number_field :entry_id, value: @will_comment_entry_id %>
   </div>
   <div class="field">
     <%= f.label :comment %><br>
     <%= f.text_area :comment %>
   </div>
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.label :profile_id %><br>
+    <%= f.number_field :profile_id, value: session[:login] %>
   </div>
   <div class="actions">
     <%= f.submit %>

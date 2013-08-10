@@ -11,6 +11,11 @@
 	<%= link_to "ブログ", weblogs_path %>
 	<%= link_to "記事", entries_path %>
 	<%= link_to "コメント", comments_path %>
+	<% if blog_user_signed_in? %>
+		<div style="float:right;">
+		<%= link_to "ログアウト", destroy_blog_user_session_path, method: :delete %>
+		</div>
+	<% end %>
 	<p class="notice"><%= notice %></p>
 	<p class="alert"><%= alert %></p>
 

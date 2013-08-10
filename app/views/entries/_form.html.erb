@@ -14,7 +14,7 @@
   <!-- session を使う -->
   <div class="field">
     <%= f.label :weblog_id %><br>
-    <%= f.number_field :weblog_id %>
+    <%= f.number_field :weblog_id, value: Weblog.where(user_id: session[:login]).first.id %>
   </div>
   <div class="field">
     <%= f.label :title %><br>

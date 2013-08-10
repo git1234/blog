@@ -5,7 +5,6 @@
     <tr>
       <th>Weblog</th>
       <th>Title</th>
-      <th>Body</th>
       <th></th>
       <th></th>
       <th></th>
@@ -15,9 +14,8 @@
   <tbody>
     <% @entries.each do |entry| %>
       <tr>
-        <td><%= entry.weblog_id %></td>
+        <td><%= entry.weblog.blog_name %></td>
         <td><%= entry.title %></td>
-        <td><%= entry.body %></td>
         <td><%= link_to 'Show', entry %></td>
         <% if entry.weblog.user_id == session[:login] %>
           <td><%= link_to 'Edit', edit_entry_path(entry) %></td>

@@ -17,14 +17,11 @@ class WeblogsController < ApplicationController
   def new
     @weblog = Weblog.new
     @weblog_relation_profile = Profile.find(session[:login])
-    logger.debug("---------------#{@weblog_relation_profile}")
   end
 
   # GET /weblogs/1/edit
   def edit
     @weblog_relation_profile = Profile.find(session[:login])
-        logger.debug("---------------#{@weblog_relation_profile}")
-
   end
 
   # POST /weblogs

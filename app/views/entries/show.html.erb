@@ -1,10 +1,11 @@
 <p id="notice"><%= notice %></p>
-<%= markdown(@entry.body) %>   
-
+  
+<!--
 <p>
   <strong>Weblog:</strong>
-  <%= @entry.weblog_id %>
+  < @entry.weblog_id %>
 </p>
+-->
 
 <p>
   <strong>Title:</strong>
@@ -13,7 +14,7 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @entry.body %>
+  <%= simple_format(markdown(@entry.body)) %> 
 </p>
 
 <p>

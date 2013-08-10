@@ -11,8 +11,7 @@
     </div>
   <% end %>
 
-  <!-- session を使う -->
-  <div class="field">
+  <div class="field" style="display:none;">
     <%= f.label :weblog_id %><br>
     <%= f.number_field :weblog_id, value: Weblog.where(user_id: session[:login]).first.id %>
   </div>
@@ -22,7 +21,8 @@
   </div>
   <div class="field">
     <%= f.label :body %><br>
-    <%= f.text_area :body %>
+    本文には、HTMLタグが使えます。<br>
+    <%= f.text_area :body, :size=>"160x20" %>
   </div>
   <div class="actions">
     <%= f.submit %>

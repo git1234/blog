@@ -6,6 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(:default, Rails.env)
 
+def session_id
+    @session = current_blog_user.id
+    session[:login] = @session
+end
+
 module Blog
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.

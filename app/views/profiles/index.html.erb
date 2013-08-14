@@ -1,6 +1,7 @@
-<h1>Listing profiles</h1>
+<div style="float:left; margin-left:300px;">
+<h1>プロフィール一覧</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -32,3 +33,4 @@
 <% if !Profile.where(blog_user_id: session[:login]) %>
   <%= link_to 'New Profile', new_profile_path %>
 <% end %>
+</div>

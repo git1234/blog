@@ -11,6 +11,9 @@ class EntriesController < ApplicationController
   # GET /entries/1
   # GET /entries/1.json
   def show
+    
+    @entry_pfofile = Profile.find(@entry.weblog.profile_id)
+    logger.debug("----------#{@entry_pfofile}")
   end
 
   # GET /entries/new

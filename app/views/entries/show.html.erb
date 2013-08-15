@@ -1,29 +1,54 @@
 <p id="notice"><%= notice %></p>
   
-<!--
-<p>
-  <strong>Weblog:</strong>
-  < @entry.weblog_id %>
-</p>
--->
+<div style="float:right;">
+  <h2>プロフィール</h2>
+  <p>
+    <strong>Name:</strong>
+    <%= @entry_pfofile.name %>
+  </p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @entry.title %>
-</p>
+  <p>
+    <strong>Age:</strong>
+    <%= @entry_pfofile.age %>
+  </p>
 
-<p>
-  <strong>Body:</strong>
+  <p>
+    <strong>Hobby:</strong>
+    <%= @entry_pfofile.hobby %>
+  </p>
+
+  <p>
+    <strong>Detail:</strong>
+    <%= @entry_pfofile.detail %>
+  </p>
+</div>
+
+<div style="text-align:center;">
+<h1 style="margin-top:40px;"><%= @entry.title %></h1>
+<p style="margin-top:60px;">
+  <hr>
   <%= simple_format(markdown(@entry.body)) %> 
 </p>
 
-<p>
-  <strong>コメント:</strong>
+<p style="margin-top:60px;"> 
+  <h2>コメント</h2>
   <% @entry.comments.each do |comment| %>
 	  <p>＞　<%= comment.comment %></p>
   <% end %>
 </p>
 
+<p style="margin-top:40px;">
 <%= link_to 'Edit', edit_entry_path(@entry) %> |
 <%= link_to 'Back', entries_path %>
 <%= link_to 'コメントする', new_comment_path(will_comment_entry_id: @entry.id) %>
+</p>
+
+<p>
+  <% if @entry.id != 1 %>
+    <%= link_to '前の記事', Entry.find(@entry.id - 1) %>
+  <% end %>
+  <% if @entry != Entry.last %>
+    <%= link_to '次の記事', Entry.find(@entry.id + 1) %>
+  <% end %>
+</p>
+</div>

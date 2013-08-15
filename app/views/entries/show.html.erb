@@ -22,12 +22,10 @@
     <%= @entry_pfofile.detail %>
   </p>
 </div>
-<div style="float:left; margin-left:150px;">
-  <h1><%= @entry.title %></h1>
 
-
+<div style="text-align:center;">
+<h1 style="margin-top:40px;"><%= @entry.title %></h1>
 <p style="margin-top:60px;">
-  <h2>本文</h2>
   <hr>
   <%= simple_format(markdown(@entry.body)) %> 
 </p>

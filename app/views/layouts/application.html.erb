@@ -6,18 +6,36 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
-	<%= link_to "プロフィール", profiles_path %>
-	<%= link_to "ブログ", weblogs_path %>
-	<%= link_to "記事", entries_path %>
-	<%= link_to "コメント", comments_path %>
-	<% if blog_user_signed_in? %>
-		<div style="float:right;">
-		<%= link_to "ログアウト", destroy_blog_user_session_path, method: :delete %>
-		</div>
-	<% end %>
-	<p class="notice"><%= notice %></p>
-	<p class="alert"><%= alert %></p>
+<body style="text-align: center;" >
+<!--　ナビゲーションバー　-->
+<div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+            <a class="brand" href="#">amedoorブログ</a>
+            <div class="nav-collapse">
+                <ul class="nav">
+                    <li style="float:left;"><%= link_to "プロフィール", profiles_path %></li>
+					<li style="float:left;"><%= link_to "ブログ", weblogs_path %></li>
+                    <li><%= link_to "記事", entries_path %></li>
+                    <li><%= link_to "コメント", comments_path %></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!--　ナビゲーションバー　--> 
+<% if blog_user_signed_in? %>
+	<div style="float:right;">
+	<%= link_to "ログアウト", destroy_blog_user_session_path, method: :delete %>
+	</div>
+<% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 <%= yield %>
 

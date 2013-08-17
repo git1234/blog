@@ -33,7 +33,7 @@ Blog::Application.configure do
     :address => 'smtp.gmail.com',
     :port => 587,
     :authentication => :plain,
-    :user_name => 'takuro01234@gmail.com',
-    :password => '***' #本番の時だけここはパスワード
+    :user_name => 'メールアドレス',
+    :password => '***' #ここはパスワード
   }
 end
